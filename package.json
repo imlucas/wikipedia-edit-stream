@@ -1,0 +1,25 @@
+{
+  "name": "wikipedia-edit-stream",
+  "description": "@todo should prompt for this",
+  "homepage": "http://github.com/imlucas/wikipedia-edit-stream",
+  "author": "Lucas Hrabovsky <hrabovsky.lucas@gmail.com> (hrabovsky.lucas@gmail.com)",
+  "version": "0.0.1",
+  "guzzle": "stream",
+  "dependencies": {
+    "debug": "^0.7.4",
+    "slate-irc": "^0.4.0",
+    "regret": "^0.1.2",
+    "event-stream": "^3.1.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/imlucas/wikipedia-edit-stream"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^1.17.1"
+  }
+}
