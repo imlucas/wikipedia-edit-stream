@@ -1,0 +1,12 @@
+{
+  "name": "Wikiedits",
+  "description": "Stream wikipedia edit data to MongoDB.",
+  "repository": "https://github.com/mongodb-js/wikiedits",
+  "keywords": ["node", "wikipedia"],
+  "env": {
+    "MONGODB_URL": {
+      "description": "mongodb://username:password@hostname:port/db",
+      "required": true
+    }
+  }
+}
