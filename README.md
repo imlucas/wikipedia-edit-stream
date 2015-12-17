@@ -1,32 +1,15 @@
-# wikipedia-edit-stream
+# wikiedits [![slack][slack_img]][slack_url]
 
-[![build status](https://secure.travis-ci.org//imlucas/wikipedia-edit-stream.png)](http://travis-ci.org//imlucas/wikipedia-edit-stream)
+> Listen for page edit notifications from Wikipedia IRC
+> and push them into a MongoDB collection to use as a test dataset.
 
-## Examples
+[![](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mongodb-js/wikiedits)
 
-```
-var wikiedits = require('./'),
-  crypto = require('crypto'),
-  es = require('event-stream'),
-  mongo = require('stream-to-mongo')({
-    db: 'mongodb://localhost:27017/wikipedia',
-    collection: 'edits'
-  });
-
-var client = wikiedits().on('data', function(data){
-  data._id = crypto.createHash('sha1')
-    .update(data.page + '-' data.date.getTime())
-    .toString('hex');
-
-  mongo.write(data);
-});
-
-```
-
-## Todo
-
-- slate-irc-parser is using streams1, so update it so we can actually pipe
+![](https://cldup.com/qbxg0_rUfS.thumb.png)
 
 ## License
 
-MIT
+Apache 2.0
+
+[slack_url]: https://slack.mongodb.parts/
+[slack_img]: https://slack.mongodb.parts/badge.svg
