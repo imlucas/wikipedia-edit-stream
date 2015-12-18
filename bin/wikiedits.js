@@ -2,13 +2,16 @@
 var debug = require('debug')('wikiedits');
 var wikiedits = require('../');
 var URL = require('mongodb-url').get('mongodb://localhost:27017/wikiedits');
+var createMongoWriteStream = require('stream-to-mongo');
 
-var mongo = require('stream-to-mongo')({
+wikiedits({
+  lang: process.env.LANGUAGE || 'en',
+  project: process.env.PROJECT || 'wikipedia'
+})
+.pipe(createMongoWriteStream({
   db: URL,
-  collection: 'edits'
-});
-
-wikiedits().pipe(mongo);
+  collection: process.env.MONGODB_COLLECTION || 'edits'
+}));
 
 
 var http = require('http');

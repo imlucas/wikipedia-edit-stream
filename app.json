@@ -2,11 +2,27 @@
   "name": "Wikiedits",
   "description": "Stream wikipedia edit data to MongoDB.",
   "repository": "https://github.com/mongodb-js/wikiedits",
-  "keywords": ["node", "wikipedia"],
+  "keywords": ["node", "wikipedia", "mongodb-js", "mongodb", "dataset"],
   "env": {
     "MONGODB_URL": {
-      "description": "mongodb://username:password@hostname:port/db",
+      "description": "MongoDB deployment to persist changes to, e.g. `mongodb://username:password@hostname:port/db`",
       "required": true
+    },
+    "HEROKU_URL": {
+      "description": "URL of your deployed heroku app so it won't be put to sleep while listening on IRC",
+      "required": false
+    },
+    "MONGODB_COLLECTION": {
+      "description": "Collection to populate [Default: `edits`]",
+      "required": false
+    },
+    "LANGUAGE": {
+      "description": "Two letter language code of the WikiMedia project [Default: `en`]",
+      "required": false
+    },
+    "PROJECT": {
+      "description": "The WikiMedia project id to listen to [Default: `wikipedia`]",
+      "required": false
     }
   }
 }
