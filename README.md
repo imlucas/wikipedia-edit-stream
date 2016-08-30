@@ -1,4 +1,4 @@
-# wikiedits [![slack][slack_img]][slack_url]
+# wikiedits
 
 > Listen for page edit notifications from Wikipedia IRC
 > and push them into a MongoDB collection to use as a test dataset.
@@ -38,6 +38,4 @@ The following customizations are available by setting environment variables.
 
 Apache 2.0
 
-[slack_url]: https://slack.mongodb.parts/
-[slack_img]: https://slack.mongodb.parts/badge.svg
 [0]: https://meta.wikimedia.org/wiki/Help:Recent_changes#Recent_changes_stream
