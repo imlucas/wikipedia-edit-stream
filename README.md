@@ -39,8 +39,12 @@ The following customizations are available by setting environment variables.
 ```bash
 npm i -g wikipedia-edit-stream mongodb-runner cross-env;
 mongodb-runner start --name=wikipedia --port=27018;
-cross-env MONGODB_URL=mongodb://localhost:27018/wikipedia wikipedia-edit-stream;
+cross-env DEBUG=wikipedia* MONGODB_URL=mongodb://localhost:27018/wikipedia wikipedia-edit-stream;
 ```
+
+Within a few minutes, you will start seeing debug messages in the terminal as edit notifications are received from IRC, parsed, and inserted into MongoDB! Open http://localhost:3000/ to view a simple count of the number of edits in your collection.
+
+
 
 ## License
 
