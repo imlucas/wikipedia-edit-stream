@@ -1,14 +1,16 @@
 var irc = require('slate-irc');
 var net = require('net');
-var debug = require('debug')('wikiedits');
+var debug = require('debug')('wikipedia-edit-stream');
 var regret = require('regret');
 var stream = require('stream');
 var util = require('util');
 
-regret.add('wikipedia.edit',
+regret.add(
+  'wikipedia.edit',
   /\[\[(.+)\]\] (.*) \* (.*) \* \(\+?(\d+)\) (.*)/,
   '[[Maritime Labour Convention]]  http://en.wikipedia.org/w/index.php?diff=599013421&oldid=599013381 * L.tak * (+0) update',
-  ['page', 'diff_url', 'username', 'delta', 'comment']);
+  ['page', 'diff_url', 'username', 'delta', 'comment']
+);
 
 function Monitor(opts) {
   if (!(this instanceof Monitor)) {
@@ -25,10 +27,12 @@ util.inherits(Monitor, stream.Readable);
 
 Monitor.prototype._read = function() {
   var self = this;
-  this.client = irc(net.connect({
-    port: 6667,
-    host: 'irc.wikimedia.org'
-  }));
+  this.client = irc(
+    net.connect({
+      port: 6667,
+      host: 'irc.wikimedia.org'
+    })
+  );
   this.channel = '#' + this.lang + '.' + this.project;
 
   this.client.on('data', function(msg) {

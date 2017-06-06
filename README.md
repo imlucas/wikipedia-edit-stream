@@ -32,7 +32,15 @@ The following customizations are available by setting environment variables.
 
 ## Deploy Your Own
 
-[![](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mongodb-js/wikiedits)
+[![](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mongodb-js/wikipedia-edit-stream)
+
+## CLI
+
+```bash
+npm i -g wikipedia-edit-stream mongodb-runner cross-env;
+mongodb-runner start --name=wikipedia --port=27018;
+cross-env MONGODB_URL=mongodb://localhost:27018/wikipedia wikipedia-edit-stream;
+```
 
 ## License
 
