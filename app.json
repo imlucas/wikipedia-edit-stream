@@ -1,7 +1,7 @@
 {
-  "name": "Wikiedits",
+  "name": "wikipedia-edit-stream",
   "description": "Stream wikipedia edit data to MongoDB.",
-  "repository": "https://github.com/mongodb-js/wikiedits",
+  "repository": "https://github.com/mongodb-js/wikipedia-edit-stream",
   "keywords": ["node", "wikipedia", "mongodb-js", "mongodb", "dataset"],
   "env": {
     "MONGODB_URL": {

@@ -1,4 +1,4 @@
-# wikiedits
+# wikipedia-edit-stream
 
 > Listen for page edit notifications from Wikipedia IRC
 > and push them into a MongoDB collection to use as a test dataset.

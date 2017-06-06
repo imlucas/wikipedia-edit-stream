@@ -1,42 +1,39 @@
 {
   "name": "wikipedia-edit-stream",
-  "description": "@todo should prompt for this",
-  "homepage": "https://github.com/mongodb-js/wikiedits",
-  "author": "Lucas Hrabovsky <lucas@mongodb.com>",
+  "description": "Listen for page edit notifications from Wikipedia IRC",
+  "homepage": "https://github.com/mongodb-js/wikipedia-edit-stream",
+  "author": "Lucas Hrabovsky <hrabovsky.lucas@gmail.com>",
   "version": "0.0.1",
-  "dependencies": {
-    "debug": "^2.2.0",
-    "event-stream": "^3.3.2",
-    "express": "^4.13.3",
-    "mongodb-url": "^1.0.3",
-    "ms": "^1.0.0",
-    "regret": "^0.1.2",
-    "slate-irc": "^0.9.0",
-    "stream-to-mongo": "^0.1.5"
+  "bin": {
+    "wikipedia-edit-stream": "bin/wikipedia-edit-stream.js"
   },
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mongodb-js/wikiedits"
+    "url": "git://github.com/mongodb-js/wikipedia-edit-stream"
   },
   "scripts": {
-    "start": "bin/wikiedits.js",
+    "start": "bin/wikipedia-edit-stream.js",
     "check": "mongodb-js-precommit",
     "fmt": "mongodb-js-fmt",
     "test": "mocha",
     "ci": "npm run check && npm test"
   },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "event-stream": "^3.3.2",
+    "express": "^4.13.3",
+    "mongodb": "^2.2.28",
+    "mongodb-url": "^2.0.0",
+    "ms": "^2.0.0",
+    "regret": "^0.1.2",
+    "slate-irc": "^0.9.0",
+    "stream-to-mongo": "^0.1.5"
+  },
   "devDependencies": {
     "eslint-config-mongodb-js": "^2.2.0",
-    "mocha": "^3.1.2",
-    "mongodb-js-fmt": "0.0.3",
-    "mongodb-js-precommit": "^0.2.8",
-    "pre-commit": "^1.1.2"
-  },
-  "engines": {
-    "node": ">=4.2.2"
-  },
-  "precommit": [
-    "check"
-  ]
+    "mocha": "^3.4.2",
+    "mongodb-js-fmt": "^0.0.3",
+    "mongodb-js-precommit": "^0.2.8"
+  }
 }

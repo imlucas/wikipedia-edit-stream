@@ -8,10 +8,10 @@ wikiedits({
   lang: process.env.LANGUAGE || 'en',
   project: process.env.PROJECT || 'wikipedia'
 })
-.pipe(createMongoWriteStream({
-  db: URL,
-  collection: process.env.MONGODB_COLLECTION || 'edits'
-}));
+  .pipe(createMongoWriteStream({
+    db: URL,
+    collection: process.env.MONGODB_COLLECTION || 'edits'
+  }));
 
 
 var http = require('http');
@@ -42,7 +42,9 @@ app.use(function(req, res, next) {
     return;
   }
   mongodb.connect(URL, function(err, db) {
-    if (err) return next(err);
+    if (err) {
+      return next(err);
+    }
 
     _db = db;
     req.locals = {
@@ -54,9 +56,13 @@ app.use(function(req, res, next) {
 
 app.get('/', function(req, res, next) {
   req.locals.db.collection('edits').count(function(err, c) {
-    if (err) return next(err);
+    if (err) {
+      return next(err);
+    }
 
-    res.send({count: c});
+    res.send({
+      count: c
+    });
   });
 });
 
