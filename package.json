@@ -3,7 +3,7 @@
   "description": "Listen for page edit notifications from Wikipedia IRC",
   "homepage": "https://github.com/mongodb-js/wikipedia-edit-stream",
   "author": "Lucas Hrabovsky <hrabovsky.lucas@gmail.com>",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "bin": {
     "wikipedia-edit-stream": "bin/wikipedia-edit-stream.js"
   },
