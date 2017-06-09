@@ -15,7 +15,7 @@ extremely useful as we can deploy new releases and configurations of MongoDB
 and start putting it under the real-world pressures instead of synthetic micro-benchmarks
 or machine generated datasets.
 
-![](docs/wikipedia-edit-stream-compass.gif)
+![](docs/wikipedia-edit-stream-compass.png)
 
 ## Configuration
 
@@ -44,10 +44,10 @@ cross-env DEBUG=wikipedia* MONGODB_URL=mongodb://localhost:27018/wikipedia wikip
 
 Within a few minutes, you will start seeing debug messages in the terminal as edit notifications are received from IRC, parsed, and inserted into MongoDB! Open http://localhost:3000/ to view a simple count of the number of edits in your collection.
 
-
-
 ## License
 
 Apache 2.0
+
+![](docs/wikipedia-edit-stream-compass.gif)
 
 [0]: https://meta.wikimedia.org/wiki/Help:Recent_changes#Recent_changes_stream
