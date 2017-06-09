@@ -15,7 +15,7 @@ extremely useful as we can deploy new releases and configurations of MongoDB
 and start putting it under the real-world pressures instead of synthetic micro-benchmarks
 or machine generated datasets.
 
-![](https://cldup.com/qbxg0_rUfS.thumb.png)
+![](docs/wikipedia-edit-stream-compass.gif)
 
 ## Configuration
 
